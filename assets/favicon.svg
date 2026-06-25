@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BEST SOUND">
-  <rect width="64" height="64" rx="14" fill="#050507"/>
-  <path d="M15 14h21c7 0 12 4 12 10 0 4-2 7-6 9 5 2 8 6 8 12 0 7-5 11-13 11H15V14Zm10 9v8h10c3 0 5-1 5-4s-2-4-5-4H25Zm0 17v7h11c3 0 5-1 5-4s-2-3-5-3H25Z" fill="#d8ad45"/>
-  <path d="M19 49c4 4 10 6 17 6 9 0 15-4 15-11 0-6-4-9-13-11l-7-1c-4-1-6-2-6-5 0-3 3-5 8-5 5 0 9 1 13 4l4-8c-5-3-10-5-17-5-10 0-17 5-17 13 0 7 5 10 14 12l7 1c4 1 5 2 5 5s-3 4-7 4c-5 0-9-2-13-5l-3 6Z" fill="#ffffff" opacity=".96"/>
-  <path d="M18 34h4m5 0h3m5 0h6m5 0h3" stroke="#050507" stroke-width="3" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="16" fill="#050507"/>
+  <rect x="5" y="5" width="54" height="54" rx="13" fill="none" stroke="#d6ad4b" stroke-width="2"/>
+  <text x="32" y="39" text-anchor="middle" fill="#f5d47a" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-weight="700" letter-spacing="-2">BS</text>
+  <path d="M22 46h20" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity=".86"/>
 </svg>
