@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="BEST SOUND — современный сайт-прототип концертного агентства: афиша, туры, артист-букинг, продакшн и заявки." />
+  <meta name="description" content="BEST SOUND — сайт концертного агентства: официальные контакты, опубликованные туровые даты, артист-букинг, продакшн и заявки." />
   <meta name="theme-color" content="#050507" />
   <meta name="color-scheme" content="dark" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="BEST SOUND — Concert Agency" />
-  <meta property="og:description" content="Премиальный прототип сайта концертного агентства: афиша, туры, артисты, news/social и заявки." />
+  <meta property="og:description" content="Концертное агентство: туры, артист-букинг, live production, опубликованные даты и заявки." />
   <meta property="og:image" content="./assets/og-preview.svg" />
   <meta property="og:locale" content="ru_RU" />
 
@@ -18,6 +18,7 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
   <link rel="preload" href="./src/styles.css" as="style" />
   <link rel="stylesheet" href="./src/styles.css" />
+  <link rel="stylesheet" href="./src/production.css" />
 </head>
 
 <body>
@@ -26,7 +27,7 @@
 
   <div class="topline" aria-label="Анонс">
     <div class="container topline-grid">
-      <span>BEST SOUND / live production / tour management</span>
+      <span>BEST SOUND / official content layer / production-ready static site</span>
       <a href="#contacts">Запросить проект →</a>
     </div>
   </div>
@@ -39,10 +40,10 @@
         </a>
 
         <nav class="nav-links" id="navLinks" aria-label="Основная навигация">
+          <a href="#about">О компании</a>
           <a href="#shows">Афиша</a>
           <a href="#capabilities">Возможности</a>
           <a href="#tour">Туры</a>
-          <a href="#journal">Journal</a>
           <a href="#contacts" class="btn btn-primary">Заявка</a>
         </nav>
 
@@ -57,32 +58,32 @@
     <section class="section hero-section">
       <div class="container hero-layout">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Concert agency / Russia / international bookings</p>
-          <h1>Сайт концертного агентства без дешёвой графики.</h1>
+          <p class="eyebrow">Concert agency / official content / production-ready prototype</p>
+          <h1>Наши концерты — произведение искусства.</h1>
           <p class="lead">
-            Редизайн BEST SOUND в стиле крупных концертных и talent-agency платформ: строгая типографика, event index, tour board, premium-постеры, journal/social-блок и коммерческая заявка.
+            Обновлённый сайт BEST SOUND теперь опирается на реальные публичные данные: официальные контакты, опубликованную туровую историю, заявленные преимущества агентства и понятный канал заявки через email-клиент.
           </p>
           <div class="hero-actions">
-            <a href="#shows" class="btn btn-primary">Смотреть афишу</a>
-            <a href="#contacts" class="btn btn-ghost">Обсудить мероприятие</a>
+            <a href="#shows" class="btn btn-primary">Смотреть опубликованные даты</a>
+            <a href="#contacts" class="btn btn-ghost">Отправить заявку</a>
           </div>
         </div>
 
         <aside class="poster-system reveal" aria-label="Редакционная витрина BEST SOUND">
           <div class="poster-card poster-main">
-            <span class="poster-meta">TOUR / 2026</span>
-            <strong>BEST<br>SOUND</strong>
-            <em>Live production<br>and artist booking</em>
+            <span class="poster-meta">OFFICIAL / BEST SOUND</span>
+            <strong>LIVE<br>ART</strong>
+            <em>Concert agency<br>and tour management</em>
           </div>
           <div class="poster-card poster-secondary">
-            <span>Featured show</span>
+            <span>Featured official artist</span>
             <strong>Alessandro Safina</strong>
-            <em>18 APR · Moscow</em>
+            <em>Published 2026 route</em>
           </div>
           <div class="show-index-panel">
-            <span>Upcoming index</span>
-            <strong>05 curated dates</strong>
-            <small>Premium · Arena · Corporate · Festival</small>
+            <span>Official source layer</span>
+            <strong>Public tour listings</strong>
+            <small id="sourceNote">Data source note loading...</small>
           </div>
         </aside>
       </div>
@@ -92,15 +93,35 @@
       <div class="partner-track" id="partnerTrack"></div>
     </section>
 
+    <section id="about" class="section about-section">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <p class="kicker">About / trust layer</p>
+          <h2>Добавлен слой доверия, которого не хватало макету</h2>
+          <p>
+            Официальный сайт BEST SOUND позиционирует агентство через репутацию, опыт более 20 лет, сотни успешных событий, тысячи зрителей, сотрудничество с мировыми звёздами и широкую географию концертов.
+          </p>
+          <a id="officialSource" class="text-link" href="https://sound-agency.ru/" target="_blank" rel="noopener noreferrer">Открыть официальный источник →</a>
+        </div>
+
+        <div class="trust-grid reveal" aria-label="Доказательства и позиционирование">
+          <article><strong>20+</strong><span>лет заявленного опыта</span></article>
+          <article><strong>100+</strong><span>успешных событий</span></article>
+          <article><strong>1000+</strong><span>довольных зрителей</span></article>
+          <article><strong>WORLD</strong><span>сотрудничество со звёздами</span></article>
+        </div>
+      </div>
+    </section>
+
     <section id="shows" class="section shows-section">
       <div class="container">
         <div class="section-head reveal">
           <div>
             <p class="kicker">Shows index</p>
-            <h2>Афиша как у нормальной ticketing-платформы</h2>
+            <h2>Опубликованные события и туровая история</h2>
           </div>
           <p>
-            Паттерн взят не из декоративных лендингов, а из реальных концертных сайтов: поиск, фильтры, статусы и быстрый просмотр события.
+            Это не выдуманная афиша. Даты взяты из публичного официального сайта. Часть событий уже прошла, поэтому они отмечены как official listing / archive, а не как будущие концерты.
           </p>
         </div>
 
@@ -112,11 +133,9 @@
 
           <div class="filters" role="list" aria-label="Фильтры афиши">
             <button class="filter-btn active" type="button" data-filter="all">Все</button>
-            <button class="filter-btn" type="button" data-filter="premium">Premium</button>
+            <button class="filter-btn" type="button" data-filter="safina">Safina</button>
             <button class="filter-btn" type="button" data-filter="rock">Rock</button>
-            <button class="filter-btn" type="button" data-filter="classic">Classic</button>
-            <button class="filter-btn" type="button" data-filter="corporate">Corporate</button>
-            <button class="filter-btn" type="button" data-filter="festival">Festival</button>
+            <button class="filter-btn" type="button" data-filter="paciotti">Paciotti</button>
           </div>
         </div>
 
@@ -129,10 +148,10 @@
         <div class="section-head reveal">
           <div>
             <p class="kicker">Capabilities</p>
-            <h2>Агентство должно продавать систему, а не фон с прожекторами</h2>
+            <h2>Полный цикл: артист, маршрут, площадка, продакшн</h2>
           </div>
           <p>
-            Блоки услуг теперь выглядят как capability matrix: чистые SVG-иконки, строгий текст, без emoji и игрушечной псевдографики.
+            Сайт должен продавать не только концерт, а способность агентства вести весь процесс: booking, tour management, live production, PR и corporate shows.
           </p>
         </div>
 
@@ -144,9 +163,9 @@
       <div class="container tour-board">
         <div class="tour-copy reveal">
           <p class="kicker">Tour board</p>
-          <h2>Маршрут тура вместо абстрактной карты</h2>
+          <h2>Маршрут Alessandro Safina из официальной публикации</h2>
           <p>
-            Взрослее работает не декоративная карта, а production-board: город, дата, роль события и логика маршрута.
+            В прототип добавлен production-board по опубликованному маршруту 2026: Tashkent, Bishkek, Minsk, Kaliningrad, Saint Petersburg, Moscow и другие города.
           </p>
         </div>
 
@@ -157,18 +176,18 @@
     <section class="section case-section">
       <div class="container case-grid">
         <article class="case-card reveal">
-          <p class="kicker">Featured system</p>
-          <h2>От афиши до backstage-контроля</h2>
+          <p class="kicker">Production readiness</p>
+          <h2>Теперь это ближе к сайту для показа клиенту</h2>
           <p>
-            Сайт показывает не только список концертов. Он объясняет, что агентство умеет вести весь цикл: артист, площадка, промо, продакшн, логистика и коммуникация.
+            Остался статический frontend, но добавлены реальные данные, legal page, email workflow и GitHub Pages workflow. Для полноценного production всё ещё нужен серверный канал заявок или CRM.
           </p>
         </article>
 
         <div class="case-metrics reveal">
-          <article><span>01</span><strong>Artist booking</strong><small>переговоры, условия, райдер</small></article>
-          <article><span>02</span><strong>Venue strategy</strong><small>площадка, capacity, VIP</small></article>
-          <article><span>03</span><strong>Campaign</strong><small>анонсы, PR, social</small></article>
-          <article><span>04</span><strong>Live ops</strong><small>монтаж, саундчек, backstage</small></article>
+          <article><span>01</span><strong>Real source data</strong><small>официальные даты и тезисы</small></article>
+          <article><span>02</span><strong>Lead workflow</strong><small>mailto-заявка без backend</small></article>
+          <article><span>03</span><strong>Legal page</strong><small>privacy.html</small></article>
+          <article><span>04</span><strong>Deploy workflow</strong><small>GitHub Pages Actions</small></article>
         </div>
       </div>
     </section>
@@ -177,11 +196,11 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="kicker">Journal / Social</p>
-            <h2>Блок новостей и заметок вместо пустой галереи</h2>
+            <p class="kicker">Journal / Notes</p>
+            <h2>Заметки на базе реального позиционирования</h2>
           </div>
           <p>
-            У крупных промоутеров часто есть news/social-зона. Для BEST SOUND это можно использовать как кейсы, backstage notes и анонсы.
+            Этот блок теперь не просто декоративный journal, а место для объяснения репутации, кейсов и процесса работы агентства.
           </p>
         </div>
 
@@ -193,21 +212,22 @@
       <div class="container contact-layout">
         <div class="contact-copy reveal">
           <p class="kicker">Request desk</p>
-          <h2>Заявка как вход в коммерческий процесс</h2>
+          <h2>Заявка открывает готовое письмо менеджеру</h2>
           <p>
-            Форма собирает контекст: тип клиента, город, дату, бюджет и описание задачи. Для реального сайта её можно подключить к Telegram, CRM или backend.
+            Без backend нельзя безопасно хранить Telegram bot token или CRM-secret в публичном репозитории. Поэтому текущая production-safe версия использует `mailto:`: форма собирает данные и открывает email-клиент с готовым письмом.
           </p>
           <div class="contact-cards">
-            <article><strong>Booking</strong><span>booking@best-sound.ru</span></article>
-            <article><strong>Scope</strong><span>Туры, концерты, corporate, festivals</span></article>
-            <article><strong>Prototype</strong><span>Static frontend / no backend</span></article>
+            <article><strong>Email</strong><span id="contactEmail">Loading...</span></article>
+            <article><strong>Messaging</strong><span>WhatsApp / Telegram — по официальному контакту агентства</span></article>
+            <article><strong>Privacy</strong><span><a class="text-link" href="./privacy.html">Политика обработки данных</a></span></article>
           </div>
+          <p class="contact-small">Email собирается на стороне клиента из частей, чтобы не держать прямую строку контакта в HTML.</p>
         </div>
 
         <form class="lead-form reveal" id="leadForm">
           <div class="form-grid">
             <label><span>Имя</span><input name="name" type="text" placeholder="Как к вам обращаться" required /></label>
-            <label><span>Телефон</span><input name="phone" type="tel" placeholder="+7..." required /></label>
+            <label><span>Телефон</span><input name="phone" type="tel" placeholder="Ваш контактный номер" required /></label>
           </div>
           <div class="form-grid">
             <label><span>Email</span><input name="email" type="email" placeholder="mail@example.com" /></label>
@@ -237,8 +257,9 @@
             </select>
           </label>
           <label><span>Описание задачи</span><textarea name="message" placeholder="Формат события, желаемый артист, площадка, аудитория, сроки"></textarea></label>
-          <label class="consent"><input type="checkbox" required /><span>Я согласен на обработку персональных данных для связи по заявке.</span></label>
-          <button class="btn btn-primary" type="submit">Отправить заявку</button>
+          <label class="consent"><input type="checkbox" required /><span>Я согласен на обработку персональных данных для связи по заявке. <a href="./privacy.html">Политика</a></span></label>
+          <button class="btn btn-primary" type="submit">Открыть письмо с заявкой</button>
+          <a id="contactEmailLink" class="btn btn-ghost" href="mailto:example@example.com">Написать напрямую</a>
         </form>
       </div>
     </section>
@@ -260,14 +281,14 @@
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite">
-    <strong>Заявка сохранена в прототипе</strong>
-    <span>Для реального сайта нужно подключить backend, CRM, Telegram или email API.</span>
+    <strong>Письмо подготовлено</strong>
+    <span>Открылся email-клиент с заполненной заявкой. Проверь текст и отправь письмо.</span>
   </div>
 
   <footer class="site-footer">
     <div class="container footer-grid">
       <a href="#" class="footer-logo" aria-label="BEST SOUND — на главную"><img src="./assets/logo.svg" alt="BEST SOUND" /></a>
-      <p>© 2026 BEST SOUND. Agency-grade static prototype.</p>
+      <p>© 2026 BEST SOUND. Static production-readiness prototype. <a href="./privacy.html">Privacy</a></p>
     </div>
   </footer>
 
