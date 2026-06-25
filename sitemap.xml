@@ -5,6 +5,14 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://denis7kom.github.io/best-sound/lang-en.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://denis7kom.github.io/best-sound/lang-it.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://denis7kom.github.io/best-sound/privacy.html</loc>
     <priority>0.4</priority>
   </url>
