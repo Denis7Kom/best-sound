@@ -4,4 +4,8 @@
     <loc>https://denis7kom.github.io/best-sound/</loc>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://denis7kom.github.io/best-sound/privacy.html</loc>
+    <priority>0.4</priority>
+  </url>
 </urlset>

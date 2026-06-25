@@ -15,6 +15,10 @@ const leadForm = qs("#leadForm");
 const modal = qs("#concertModal");
 const modalClose = qs("#modalClose");
 const searchInput = qs("#eventSearch");
+const contactEmail = qs("#contactEmail");
+const contactEmailLink = qs("#contactEmailLink");
+const officialSource = qs("#officialSource");
+const sourceNote = qs("#sourceNote");
 
 let activeFilter = "all";
 let activeSearch = "";
@@ -25,8 +29,12 @@ const iconPaths = {
   production: "M18 42h28 M24 42l5-22h6l5 22 M14 22h36 M17 30h30",
   venue: "M14 45h40 M18 45V26l16-10 16 10v19 M26 45V32h16v13",
   promo: "M16 36l26-14v28L16 36z M42 25h8v22h-8 M20 38l4 11",
-  brand: "M32 14l6 12 14 2-10 10 3 14-13-7-13 7 3-14-10-10 14-2z"
+  brand: "M32 14l6 12 14 2-10 10 3 14-13-7-13 7-14-10-10 14-2z"
 };
+
+function getContactEmail() {
+  return `${data.contacts.emailUser}@${data.contacts.emailDomain}`;
+}
 
 function closeMenu() {
   navLinks.classList.remove("active");
@@ -71,7 +79,7 @@ function serviceIcon(type) {
 function getFilteredConcerts() {
   return data.concerts.filter((concert) => {
     const matchesFilter = activeFilter === "all" || concert.category === activeFilter;
-    const haystack = `${concert.title} ${concert.subtitle} ${concert.city} ${concert.venue} ${concert.type}`.toLowerCase();
+    const haystack = `${concert.title} ${concert.subtitle} ${concert.city} ${concert.venue} ${concert.type} ${concert.status}`.toLowerCase();
     const matchesSearch = haystack.includes(activeSearch.toLowerCase().trim());
     return matchesFilter && matchesSearch;
   });
@@ -154,6 +162,27 @@ function renderPartners() {
   partnerTrack.innerHTML = items.map((item) => `<span>${item}</span>`).join("");
 }
 
+function renderContacts() {
+  const email = getContactEmail();
+
+  if (contactEmail) {
+    contactEmail.textContent = email;
+  }
+
+  if (contactEmailLink) {
+    contactEmailLink.href = `mailto:${email}`;
+    contactEmailLink.textContent = email;
+  }
+
+  if (officialSource) {
+    officialSource.href = data.source.url;
+  }
+
+  if (sourceNote) {
+    sourceNote.textContent = `${data.contacts.sourceNote} Дата проверки: ${data.source.checkedAt}.`;
+  }
+}
+
 function openConcertModal(id) {
   const concert = data.concerts.find((item) => item.id === id);
   if (!concert) return;
@@ -166,6 +195,22 @@ function openConcertModal(id) {
   qs("#modalStatus").textContent = concert.status;
 
   modal.showModal();
+}
+
+function buildLeadMessage(payload) {
+  return [
+    "Заявка с сайта BEST SOUND",
+    "",
+    `Имя: ${payload.name || "—"}`,
+    `Телефон: ${payload.phone || "—"}`,
+    `Email: ${payload.email || "—"}`,
+    `Тип клиента: ${payload.clientType || "—"}`,
+    `Город: ${payload.city || "—"}`,
+    `Дата: ${payload.date || "—"}`,
+    `Бюджет: ${payload.budget || "—"}`,
+    "",
+    `Описание: ${payload.message || "—"}`
+  ].join("\n");
 }
 
 modalClose.addEventListener("click", () => modal.close());
@@ -202,14 +247,18 @@ leadForm.addEventListener("submit", (event) => {
 
   const formData = new FormData(leadForm);
   const payload = Object.fromEntries(formData.entries());
-  console.info("BEST SOUND lead payload:", payload);
+  const email = getContactEmail();
+  const subject = encodeURIComponent("Заявка с сайта BEST SOUND");
+  const body = encodeURIComponent(buildLeadMessage(payload));
 
   leadForm.reset();
   toast.classList.add("active");
 
+  window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
   window.setTimeout(() => {
     toast.classList.remove("active");
-  }, 3600);
+  }, 4200);
 });
 
 const observer = new IntersectionObserver((entries) => {
@@ -230,4 +279,5 @@ renderServices();
 renderTour();
 renderNews();
 renderPartners();
+renderContacts();
 hydrateReveals();

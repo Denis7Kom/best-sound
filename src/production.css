@@ -1,0 +1,133 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.about-copy {
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,.074), rgba(255,255,255,.035));
+  box-shadow: 0 18px 54px rgba(0,0,0,.22);
+}
+
+.about-copy p {
+  color: var(--muted);
+  line-height: 1.66;
+}
+
+.text-link {
+  color: var(--gold);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.trust-grid article {
+  min-height: 170px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.052);
+}
+
+.trust-grid strong {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--gold);
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: .9;
+  letter-spacing: -3px;
+}
+
+.trust-grid span,
+.contact-small {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.contact-small {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.contact-cards a,
+.footer-grid a,
+.consent a {
+  color: var(--gold);
+  font-weight: 850;
+}
+
+.lead-form .btn-ghost {
+  width: fit-content;
+}
+
+.legal-page {
+  padding: 72px 0 100px;
+}
+
+.legal-card {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: clamp(24px, 4vw, 46px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,.074), rgba(255,255,255,.035));
+  box-shadow: 0 18px 54px rgba(0,0,0,.22);
+}
+
+.legal-card h1 {
+  margin-bottom: 24px;
+  font-size: clamp(40px, 6vw, 74px);
+  line-height: .9;
+}
+
+.legal-card h2 {
+  margin-top: 34px;
+  margin-bottom: 12px;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.legal-card p,
+.legal-card li {
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.legal-card ul {
+  padding-left: 22px;
+}
+
+.legal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-copy {
+    padding: 24px;
+  }
+}
