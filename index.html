@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="BEST SOUND — современный прототип сайта концертного агентства: афиша, туры, артисты, продакшн и заявки." />
+  <meta name="description" content="BEST SOUND — современный сайт-прототип концертного агентства: афиша, туры, артист-букинг, продакшн и заявки." />
   <meta name="theme-color" content="#050507" />
   <meta name="color-scheme" content="dark" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="BEST SOUND — Concert Agency" />
-  <meta property="og:description" content="Премиальный сайт-прототип для концертного агентства: туры, артисты, афиша и заявки." />
+  <meta property="og:description" content="Премиальный прототип сайта концертного агентства: афиша, туры, артисты, news/social и заявки." />
   <meta property="og:image" content="./assets/og-preview.svg" />
   <meta property="og:locale" content="ru_RU" />
 
@@ -22,31 +22,27 @@
 
 <body>
   <a class="skip-link" href="#main">К основному содержимому</a>
-
   <div class="cursor-glow" aria-hidden="true"></div>
+
+  <div class="topline" aria-label="Анонс">
+    <div class="container topline-grid">
+      <span>BEST SOUND / live production / tour management</span>
+      <a href="#contacts">Запросить проект →</a>
+    </div>
+  </div>
 
   <header class="site-header" data-header>
     <div class="container">
       <div class="nav-shell">
         <a href="#" class="brand" aria-label="BEST SOUND — на главную">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
-              <path d="M14 39c10-2 16-9 19-21 4 10 10 17 19 21-9 3-15 9-19 20-4-10-10-17-19-20Z" />
-              <path d="M22 38h20" />
-            </svg>
-          </span>
-          <span class="brand-copy">
-            <strong>BEST SOUND</strong>
-            <small>Concert Agency</small>
-          </span>
+          <img src="./assets/logo.svg" alt="BEST SOUND" />
         </a>
 
         <nav class="nav-links" id="navLinks" aria-label="Основная навигация">
-          <a href="#platform">Платформа</a>
-          <a href="#concerts">Афиша</a>
+          <a href="#shows">Афиша</a>
+          <a href="#capabilities">Возможности</a>
           <a href="#tour">Туры</a>
-          <a href="#services">Услуги</a>
-          <a href="#media">Медиа</a>
+          <a href="#journal">Journal</a>
           <a href="#contacts" class="btn btn-primary">Заявка</a>
         </nav>
 
@@ -58,267 +54,163 @@
   </header>
 
   <main id="main">
-    <section class="hero section-hero">
-      <div class="container hero-grid">
+    <section class="section hero-section">
+      <div class="container hero-layout">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span></span> Premium live production • Tour management</div>
-          <h1>Концерты, которые выглядят как <span>событие года</span></h1>
+          <p class="eyebrow">Concert agency / Russia / international bookings</p>
+          <h1>Сайт концертного агентства без дешёвой графики.</h1>
           <p class="lead">
-            Новый digital-образ BEST SOUND: афиша, туры, артисты, медиа, заявка и визуальная подача уровня современной технологичной студии.
-            Статично, быстро, без базы данных — но уже с архитектурой под развитие.
+            Редизайн BEST SOUND в стиле крупных концертных и talent-agency платформ: строгая типографика, event index, tour board, premium-постеры, journal/social-блок и коммерческая заявка.
           </p>
-
           <div class="hero-actions">
-            <a href="#contacts" class="btn btn-primary">Обсудить мероприятие</a>
-            <a href="#concerts" class="btn btn-ghost">Смотреть афишу</a>
-          </div>
-
-          <div class="metrics" aria-label="Ключевые показатели">
-            <article>
-              <strong>20+</strong>
-              <span>лет заявленного опыта</span>
-            </article>
-            <article>
-              <strong>360°</strong>
-              <span>идея, продакшн, сцена</span>
-            </article>
-            <article>
-              <strong>5</strong>
-              <span>городов в демо-маршруте</span>
-            </article>
+            <a href="#shows" class="btn btn-primary">Смотреть афишу</a>
+            <a href="#contacts" class="btn btn-ghost">Обсудить мероприятие</a>
           </div>
         </div>
 
-        <div class="stage-card reveal" aria-label="Премиальная визуализация концертной сцены">
-          <div class="stage-ui stage-ui-top">
-            <span>LIVE OPS</span>
-            <strong>98%</strong>
-            <small>production readiness</small>
+        <aside class="poster-system reveal" aria-label="Редакционная витрина BEST SOUND">
+          <div class="poster-card poster-main">
+            <span class="poster-meta">TOUR / 2026</span>
+            <strong>BEST<br>SOUND</strong>
+            <em>Live production<br>and artist booking</em>
           </div>
-
-          <div class="stage-ui stage-ui-bottom">
-            <span>NEXT TOUR</span>
-            <strong>Москва → Сочи</strong>
-            <small>5 cities route</small>
+          <div class="poster-card poster-secondary">
+            <span>Featured show</span>
+            <strong>Alessandro Safina</strong>
+            <em>18 APR · Moscow</em>
           </div>
-
-          <svg class="stage-visual" viewBox="0 0 720 640" role="img" aria-labelledby="stageTitle stageDesc">
-            <title id="stageTitle">Голографическая концертная сцена</title>
-            <desc id="stageDesc">Абстрактная сцена с прожекторами, экраном BEST SOUND и световой сеткой.</desc>
-            <defs>
-              <radialGradient id="halo" cx="50%" cy="30%" r="55%">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity=".42" />
-                <stop offset="42%" stop-color="#ff3156" stop-opacity=".26" />
-                <stop offset="100%" stop-color="#7d4dff" stop-opacity="0" />
-              </radialGradient>
-              <linearGradient id="beamGold" x1="0" x2="1">
-                <stop offset="0%" stop-color="#fff1b8" stop-opacity=".02"/>
-                <stop offset="50%" stop-color="#f3c35a" stop-opacity=".34"/>
-                <stop offset="100%" stop-color="#ff3156" stop-opacity=".02"/>
-              </linearGradient>
-              <linearGradient id="screen" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stop-color="#ff3156"/>
-                <stop offset="52%" stop-color="#7d4dff"/>
-                <stop offset="100%" stop-color="#3cc6ff"/>
-              </linearGradient>
-            </defs>
-
-            <rect width="720" height="640" rx="44" fill="url(#halo)" />
-            <path class="beam beam-a" d="M156 0 L300 504 L198 504 Z" fill="url(#beamGold)" />
-            <path class="beam beam-b" d="M564 0 L522 508 L408 508 Z" fill="url(#beamGold)" />
-            <path class="beam beam-c" d="M360 0 L434 510 L286 510 Z" fill="url(#beamGold)" />
-
-            <g class="stage-screen-svg">
-              <rect x="158" y="156" width="404" height="186" rx="26" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.18)" />
-              <rect x="180" y="178" width="360" height="142" rx="18" fill="url(#screen)" opacity=".82" />
-              <text x="360" y="260" text-anchor="middle">BEST SOUND</text>
-              <path d="M210 296 C280 252 318 338 390 292 S494 272 520 306" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="4" stroke-linecap="round" />
-            </g>
-
-            <g class="stage-floor-svg">
-              <path d="M96 438 H624 L680 566 H40 Z" fill="rgba(255,255,255,.075)" stroke="rgba(255,255,255,.16)" />
-              <path d="M122 462 H598" stroke="rgba(255,255,255,.22)" />
-              <path d="M92 510 H628" stroke="rgba(255,255,255,.16)" />
-              <path d="M242 438 L198 566 M360 438 L360 566 M478 438 L522 566" stroke="rgba(255,255,255,.14)" />
-            </g>
-
-            <g class="crowd-svg" opacity=".92">
-              <circle cx="72" cy="590" r="9"/><circle cx="108" cy="578" r="12"/><circle cx="150" cy="594" r="8"/>
-              <circle cx="194" cy="574" r="13"/><circle cx="240" cy="590" r="10"/><circle cx="288" cy="580" r="14"/>
-              <circle cx="340" cy="596" r="9"/><circle cx="390" cy="574" r="13"/><circle cx="438" cy="590" r="10"/>
-              <circle cx="486" cy="578" r="14"/><circle cx="536" cy="594" r="9"/><circle cx="584" cy="576" r="13"/>
-              <circle cx="636" cy="590" r="10"/>
-            </g>
-          </svg>
-        </div>
+          <div class="show-index-panel">
+            <span>Upcoming index</span>
+            <strong>05 curated dates</strong>
+            <small>Premium · Arena · Corporate · Festival</small>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section id="platform" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <p class="kicker">Digital platform</p>
-            <h2>Не лендинг, а витрина агентства</h2>
-          </div>
-          <p>
-            Bento-сетка показывает коммерческие смыслы: туры, артисты, продакшн, медиа, заявки и статус событий.
-            Это уже ближе к продуктовой презентации, а не к обычной странице с красивым фоном.
-          </p>
-        </div>
-
-        <div class="bento-grid">
-          <article class="bento-card bento-large reveal">
-            <span class="card-label">Agency OS</span>
-            <h3>Единая система представления концертов, артистов и туров</h3>
-            <p>Статический прототип уже разделяет данные и интерфейс. Позже его можно подключить к CMS, API или админке.</p>
-            <div class="mini-dashboard" aria-hidden="true">
-              <span style="--v:82%"></span><span style="--v:56%"></span><span style="--v:68%"></span><span style="--v:43%"></span>
-            </div>
-          </article>
-
-          <article class="bento-card reveal">
-            <span class="card-label">Lead capture</span>
-            <h3>Форма заявки</h3>
-            <p>Тип клиента, бюджет, дата, город и контактные данные — не просто имя и телефон.</p>
-          </article>
-
-          <article class="bento-card reveal">
-            <span class="card-label">Tour map</span>
-            <h3>Маршруты</h3>
-            <p>Визуальная схема тура показывает масштаб работы агентства.</p>
-          </article>
-
-          <article class="bento-card reveal">
-            <span class="card-label">Premium media</span>
-            <h3>Медиа-блок</h3>
-            <p>Готовая зона под реальные фото, backstage, видео и постеры.</p>
-          </article>
-
-          <article class="bento-card bento-accent reveal">
-            <span class="card-label">Production</span>
-            <h3>Свет, звук, сцена, логистика</h3>
-            <p>Фокус не только на артистах, но и на полном цикле события.</p>
-          </article>
-        </div>
-      </div>
+    <section class="partner-rail" aria-label="Типы проектов">
+      <div class="partner-track" id="partnerTrack"></div>
     </section>
 
-    <section id="concerts" class="section">
+    <section id="shows" class="section shows-section">
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="kicker">Concerts</p>
-            <h2>Интерактивная афиша</h2>
+            <p class="kicker">Shows index</p>
+            <h2>Афиша как у нормальной ticketing-платформы</h2>
           </div>
           <p>
-            Карточки рендерятся из массива данных в `src/data.js`. Пока без БД, но уже не вручную забито в HTML.
+            Паттерн взят не из декоративных лендингов, а из реальных концертных сайтов: поиск, фильтры, статусы и быстрый просмотр события.
           </p>
         </div>
 
-        <div class="filters reveal" role="list" aria-label="Фильтры афиши">
-          <button class="filter-btn active" type="button" data-filter="all">Все</button>
-          <button class="filter-btn" type="button" data-filter="premium">Premium</button>
-          <button class="filter-btn" type="button" data-filter="rock">Rock</button>
-          <button class="filter-btn" type="button" data-filter="classic">Classic</button>
-          <button class="filter-btn" type="button" data-filter="corporate">Corporate</button>
+        <div class="event-toolbar reveal">
+          <label class="event-search">
+            <span>Поиск события</span>
+            <input id="eventSearch" type="search" placeholder="Артист, город, площадка..." />
+          </label>
+
+          <div class="filters" role="list" aria-label="Фильтры афиши">
+            <button class="filter-btn active" type="button" data-filter="all">Все</button>
+            <button class="filter-btn" type="button" data-filter="premium">Premium</button>
+            <button class="filter-btn" type="button" data-filter="rock">Rock</button>
+            <button class="filter-btn" type="button" data-filter="classic">Classic</button>
+            <button class="filter-btn" type="button" data-filter="corporate">Corporate</button>
+            <button class="filter-btn" type="button" data-filter="festival">Festival</button>
+          </div>
         </div>
 
         <div class="concert-grid" id="concertGrid" aria-live="polite"></div>
       </div>
     </section>
 
-    <section id="tour" class="section tour-section">
-      <div class="container tour-layout">
-        <div class="reveal">
-          <p class="kicker">Tour route</p>
-          <h2>Карта тура как сильный визуальный блок</h2>
-          <p class="section-copy">
-            Для концертного агентства важно показать не только один концерт, а способность вести маршрут:
-            города, площадки, даты, логистика, команда и контроль продакшна.
-          </p>
-          <div class="tour-list" id="tourList"></div>
-        </div>
-
-        <div class="tour-map-card reveal">
-          <svg class="tour-map" viewBox="0 0 780 520" role="img" aria-labelledby="tourTitle tourDesc">
-            <title id="tourTitle">Абстрактная карта тура</title>
-            <desc id="tourDesc">Линия маршрута между городами демо-тура BEST SOUND.</desc>
-            <path class="map-shape" d="M110 260 C150 142 292 94 420 130 C548 166 650 104 704 214 C760 328 620 440 472 404 C322 368 214 432 128 350 C92 316 88 292 110 260Z"/>
-            <path class="route-line" d="M150 306 C236 210 298 210 376 250 S528 334 630 218"/>
-            <g id="tourPoints"></g>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section">
+    <section id="capabilities" class="section capabilities-section">
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="kicker">Services</p>
-            <h2>Полный цикл организации</h2>
+            <p class="kicker">Capabilities</p>
+            <h2>Агентство должно продавать систему, а не фон с прожекторами</h2>
           </div>
-          <p>Блок услуг переписан под коммерческий смысл: клиент должен быстро понять, что агентство закрывает весь процесс.</p>
+          <p>
+            Блоки услуг теперь выглядят как capability matrix: чистые SVG-иконки, строгий текст, без emoji и игрушечной псевдографики.
+          </p>
         </div>
 
         <div class="service-grid" id="serviceGrid"></div>
       </div>
     </section>
 
-    <section id="media" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <p class="kicker">Media</p>
-            <h2>Зона под реальные материалы</h2>
-          </div>
-          <p>Пока используются графические плейсхолдеры. Их можно заменить на реальные фото и постеры клиента через `background-image`.</p>
+    <section id="tour" class="section tour-section">
+      <div class="container tour-board">
+        <div class="tour-copy reveal">
+          <p class="kicker">Tour board</p>
+          <h2>Маршрут тура вместо абстрактной карты</h2>
+          <p>
+            Взрослее работает не декоративная карта, а production-board: город, дата, роль события и логика маршрута.
+          </p>
         </div>
 
-        <div class="media-grid">
-          <article class="media-card media-wide reveal"><span>Большая сцена</span></article>
-          <article class="media-card reveal"><span>Backstage</span></article>
-          <article class="media-card reveal"><span>Постеры</span></article>
-          <article class="media-card reveal"><span>Свет</span></article>
-          <article class="media-card reveal"><span>Публика</span></article>
+        <div class="tour-list" id="tourList"></div>
+      </div>
+    </section>
+
+    <section class="section case-section">
+      <div class="container case-grid">
+        <article class="case-card reveal">
+          <p class="kicker">Featured system</p>
+          <h2>От афиши до backstage-контроля</h2>
+          <p>
+            Сайт показывает не только список концертов. Он объясняет, что агентство умеет вести весь цикл: артист, площадка, промо, продакшн, логистика и коммуникация.
+          </p>
+        </article>
+
+        <div class="case-metrics reveal">
+          <article><span>01</span><strong>Artist booking</strong><small>переговоры, условия, райдер</small></article>
+          <article><span>02</span><strong>Venue strategy</strong><small>площадка, capacity, VIP</small></article>
+          <article><span>03</span><strong>Campaign</strong><small>анонсы, PR, social</small></article>
+          <article><span>04</span><strong>Live ops</strong><small>монтаж, саундчек, backstage</small></article>
         </div>
       </div>
     </section>
 
-    <section id="contacts" class="section">
+    <section id="journal" class="section journal-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">Journal / Social</p>
+            <h2>Блок новостей и заметок вместо пустой галереи</h2>
+          </div>
+          <p>
+            У крупных промоутеров часто есть news/social-зона. Для BEST SOUND это можно использовать как кейсы, backstage notes и анонсы.
+          </p>
+        </div>
+
+        <div class="news-grid" id="newsGrid"></div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section contact-section">
       <div class="container contact-layout">
         <div class="contact-copy reveal">
-          <p class="kicker">Request</p>
-          <h2>Заявка, похожая на коммерческий инструмент</h2>
-          <p class="section-copy">
-            Форма пока не отправляет данные на сервер. Но структура уже готова под Telegram-бота, email API, CRM или backend.
+          <p class="kicker">Request desk</p>
+          <h2>Заявка как вход в коммерческий процесс</h2>
+          <p>
+            Форма собирает контекст: тип клиента, город, дату, бюджет и описание задачи. Для реального сайта её можно подключить к Telegram, CRM или backend.
           </p>
-
           <div class="contact-cards">
-            <article><strong>Контакт</strong><span>booking@best-sound.ru</span></article>
-            <article><strong>География</strong><span>Россия и международные проекты</span></article>
-            <article><strong>Ответ</strong><span>После подключения backend/CRM</span></article>
+            <article><strong>Booking</strong><span>booking@best-sound.ru</span></article>
+            <article><strong>Scope</strong><span>Туры, концерты, corporate, festivals</span></article>
+            <article><strong>Prototype</strong><span>Static frontend / no backend</span></article>
           </div>
         </div>
 
         <form class="lead-form reveal" id="leadForm">
           <div class="form-grid">
-            <label>
-              <span>Имя</span>
-              <input name="name" type="text" placeholder="Как к вам обращаться" required />
-            </label>
-            <label>
-              <span>Телефон</span>
-              <input name="phone" type="tel" placeholder="+7..." required />
-            </label>
+            <label><span>Имя</span><input name="name" type="text" placeholder="Как к вам обращаться" required /></label>
+            <label><span>Телефон</span><input name="phone" type="tel" placeholder="+7..." required /></label>
           </div>
-
           <div class="form-grid">
-            <label>
-              <span>Email</span>
-              <input name="email" type="email" placeholder="mail@example.com" />
-            </label>
+            <label><span>Email</span><input name="email" type="email" placeholder="mail@example.com" /></label>
             <label>
               <span>Тип клиента</span>
               <select name="clientType" required>
@@ -330,18 +222,10 @@
               </select>
             </label>
           </div>
-
           <div class="form-grid">
-            <label>
-              <span>Город</span>
-              <input name="city" type="text" placeholder="Москва, СПБ, Казань..." />
-            </label>
-            <label>
-              <span>Дата</span>
-              <input name="date" type="date" />
-            </label>
+            <label><span>Город</span><input name="city" type="text" placeholder="Москва, СПБ, Казань..." /></label>
+            <label><span>Дата</span><input name="date" type="date" /></label>
           </div>
-
           <label>
             <span>Бюджет</span>
             <select name="budget">
@@ -352,17 +236,8 @@
               <option>7+ млн ₽</option>
             </select>
           </label>
-
-          <label>
-            <span>Описание задачи</span>
-            <textarea name="message" placeholder="Формат события, желаемый артист, площадка, аудитория, сроки"></textarea>
-          </label>
-
-          <label class="consent">
-            <input type="checkbox" required />
-            <span>Я согласен на обработку персональных данных для связи по заявке.</span>
-          </label>
-
+          <label><span>Описание задачи</span><textarea name="message" placeholder="Формат события, желаемый артист, площадка, аудитория, сроки"></textarea></label>
+          <label class="consent"><input type="checkbox" required /><span>Я согласен на обработку персональных данных для связи по заявке.</span></label>
           <button class="btn btn-primary" type="submit">Отправить заявку</button>
         </form>
       </div>
@@ -371,13 +246,16 @@
 
   <dialog class="concert-modal" id="concertModal" aria-labelledby="modalTitle">
     <button class="modal-close" id="modalClose" type="button" aria-label="Закрыть">×</button>
-    <div class="modal-poster" id="modalPoster"></div>
+    <div class="modal-poster">
+      <span id="modalType"></span>
+      <strong id="modalStatus"></strong>
+    </div>
     <div class="modal-content">
       <p class="kicker" id="modalMeta"></p>
       <h2 id="modalTitle"></h2>
       <p id="modalDescription"></p>
       <div class="chips" id="modalChips"></div>
-      <a class="btn btn-primary" id="modalTicket" href="#contacts">Оставить заявку</a>
+      <a class="btn btn-primary" href="#contacts">Оставить заявку</a>
     </div>
   </dialog>
 
@@ -388,19 +266,8 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <a href="#" class="brand" aria-label="BEST SOUND — на главную">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
-            <path d="M14 39c10-2 16-9 19-21 4 10 10 17 19 21-9 3-15 9-19 20-4-10-10-17-19-20Z" />
-            <path d="M22 38h20" />
-          </svg>
-        </span>
-        <span class="brand-copy">
-          <strong>BEST SOUND</strong>
-          <small>Concert Agency</small>
-        </span>
-      </a>
-      <p>© 2026 BEST SOUND. Static premium prototype.</p>
+      <a href="#" class="footer-logo" aria-label="BEST SOUND — на главную"><img src="./assets/logo.svg" alt="BEST SOUND" /></a>
+      <p>© 2026 BEST SOUND. Agency-grade static prototype.</p>
     </div>
   </footer>
 
