@@ -1,76 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Политика обработки персональных данных для сайта BEST SOUND." />
-  <meta name="theme-color" content="#050507" />
-  <meta name="color-scheme" content="dark" />
-  <title>Политика обработки данных — BEST SOUND</title>
-  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./src/styles.css" />
-  <link rel="stylesheet" href="./src/production.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Информация об обработке персональных данных на сайте BEST SOUND.">
+  <meta name="theme-color" content="#090a0c">
+  <title>Политика конфиденциальности — BEST SOUND</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./src/showcase.css">
+  <style>
+    .legal{max-width:850px;margin:0 auto;padding:145px 24px 100px}.legal h1{font-size:clamp(32px,6vw,58px);letter-spacing:-.06em;line-height:1.1;margin:25px 0 40px}.legal h2{font-size:22px;margin-top:38px}.legal p,.legal li{color:#c8c9d0;line-height:1.8}.legal a:not(.brand){color:#fff;text-decoration:underline;text-underline-offset:4px}.legal .back{font-weight:800;color:#f16d75;text-decoration:none}.legal .note{border-left:3px solid #e50914;padding:14px 20px;background:#17181c}
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">К основному содержимому</a>
-
-  <header class="site-header" data-header>
-    <div class="container">
-      <div class="nav-shell">
-        <a href="./index.html" class="brand" aria-label="BEST SOUND — на главную">
-          <img src="./assets/logo.svg" alt="BEST SOUND" />
-        </a>
-        <nav class="nav-links active" aria-label="Навигация политики">
-          <a href="./index.html#shows">Афиша</a>
-          <a href="./index.html#contacts" class="btn btn-primary">Заявка</a>
-        </nav>
-      </div>
+  <header class="nav scrolled" style="position:absolute">
+    <div class="container nav-inner">
+      <a class="brand" href="./index.html" aria-label="BEST SOUND — главная">
+        <span class="brand-mark"></span><span class="brand-copy"><small>CONCERT AGENCY</small>BEST SOUND</span>
+      </a>
+      <a href="./index.html" style="margin-left:auto;font-size:13px;font-weight:800">← На главную</a>
     </div>
   </header>
-
-  <main id="main" class="legal-page">
-    <div class="container">
-      <article class="legal-card">
-        <p class="kicker">Privacy / prototype</p>
-        <h1>Политика обработки персональных данных</h1>
-
-        <p>
-          Эта страница подготовлена для статического прототипа сайта BEST SOUND. Она не заменяет юридическую политику, подготовленную юристом, но закрывает базовый пользовательский сценарий: посетитель понимает, какие данные он передаёт через форму заявки.
-        </p>
-
-        <h2>Какие данные собирает форма</h2>
-        <p>Форма заявки может содержать:</p>
-        <ul>
-          <li>имя;</li>
-          <li>телефон;</li>
-          <li>email;</li>
-          <li>тип клиента;</li>
-          <li>город и дату мероприятия;</li>
-          <li>бюджет;</li>
-          <li>описание задачи.</li>
-        </ul>
-
-        <h2>Как работает отправка в этой версии</h2>
-        <p>
-          В текущем статическом прототипе данные не сохраняются на сервере сайта. После отправки формы браузер открывает email-клиент пользователя с подготовленным текстом письма. Само письмо отправляется только после действия пользователя в его почтовом приложении.
-        </p>
-
-        <h2>Для чего используются данные</h2>
-        <p>
-          Данные используются только для связи по заявке, обсуждения мероприятия, уточнения условий, подготовки предложения и дальнейшей коммуникации по проекту.
-        </p>
-
-        <h2>Что нужно для production-версии</h2>
-        <p>
-          Для реального коммерческого запуска рекомендуется заменить эту страницу на юридически проверенную политику, добавить реквизиты оператора данных, срок хранения, порядок удаления данных и полноценный серверный канал отправки заявок.
-        </p>
-
-        <div class="legal-actions">
-          <a class="btn btn-primary" href="./index.html#contacts">Вернуться к заявке</a>
-          <a class="btn btn-ghost" href="./index.html">На главную</a>
-        </div>
-      </article>
-    </div>
+  <main class="legal">
+    <p class="eyebrow">BEST SOUND / PRIVACY</p>
+    <h1>Политика конфиденциальности</h1>
+    <p>На сайте BEST SOUND доступны сведения об артистах, концертных проектах и контактные ссылки агентства. При переходе по ссылке на электронную почту или в WhatsApp пользователь самостоятельно выбирает, какие сведения передавать.</p>
+    <h2>Обращения и персональные данные</h2>
+    <p>На сайте нет встроенной формы регистрации или заявки и не ведётся собственная база данных посетителей. При обращении по электронной почте или через мессенджер могут передаваться имя, контактная информация и содержание сообщения. Они используются для ответа на обращение и обсуждения сотрудничества.</p>
+    <h2>Сторонние сервисы</h2>
+    <p>Сайт размещается на GitHub Pages и может загружать фотографии с внешних сайтов. Эти сервисы могут самостоятельно обрабатывать технические сведения, например IP-адрес и данные браузера, согласно собственным правилам. Переход по ссылкам на WhatsApp и другие внешние сайты означает переход к соответствующему сервису.</p>
+    <h2>Файлы cookie и аналитика</h2>
+    <p>В этой версии сайта не подключены собственная рекламная аналитика, пиксели отслеживания или система пользовательских аккаунтов. На сторонних ресурсах, на которые ведут ссылки, могут действовать отдельные правила.</p>
+    <h2>Обращение по вопросам данных</h2>
+    <p>Для вопросов о персональных данных и запросов по ранее направленным обращениям напишите на <a href="mailto:BESTJU@YANDEX.RU">BESTJU@YANDEX.RU</a>.</p>
+    <p class="note">Обработка данных через внешние платформы также регулируется их условиями. Перед коммерческим запуском эта политика должна быть дополнена реквизитами надлежащего оператора персональных данных и проверена применительно к юрисдикции сайта.</p>
+    <p style="margin-top:46px"><a class="back" href="./index.html">← Вернуться на главную</a></p>
   </main>
 </body>
 </html>
