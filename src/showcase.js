@@ -17,13 +17,13 @@ ru:{
 navArtists:"Артисты",navArchive:"Архив концертов",navGallery:"Галерея",navAbout:"Об агентстве",navContacts:"Контакты",
 heroKicker:"Избранный артист",heroDesc:"Итальянский тенор. Мировые сцены, выдающийся голос и концерты в сопровождении симфонического оркестра.",
 genre:"Опера · Кроссовер",archive:"Архив гастролей",discover:"Смотреть проекты",aboutArtist:"Об артисте",
-stripe:"BEST SOUND ORIGINAL CONCERT PROJECTS",stripeEnd:"ИСКУССТВО ЖИВОГО ЗВУКА",
+stripe:"КОНЦЕРТНЫЕ ПРОЕКТЫ BEST SOUND",stripeEnd:"ИСКУССТВО ЖИВОГО ЗВУКА",
 artistsTitle:"Артисты BEST SOUND",artistsInfo:"Музыканты, представленные в проектах агентства",archiveTitle:"Концертные проекты",archiveInfo:"Подтверждённые события прошлых лет",
 galleryTitle:"Фотогалерея артистов",galleryInfo:"Фотографии исполнителей BEST SOUND",feature:"КОНЦЕРТНОЕ АГЕНТСТВО",featureTitle:"Наши концерты — произведение искусства.",
 featureDesc:"Более 20 лет опыта. Концерты с мировыми звёздами, широкая география и тысячи зрителей — именно так BEST SOUND описывает свою работу.",
 source:"Официальный сайт агентства",statYears:"лет опыта",statEvents:"успешных событий",statAudience:"довольных зрителей",
 contactEyebrow:"СВЯЗАТЬСЯ С НАМИ",contactTitle:"Создадим следующий концерт вместе",contactText:"Для организации выступления, сотрудничества и запросов артистов свяжитесь с командой BEST SOUND.",
-email:"Электронная почта",messengers:"WhatsApp / Telegram",rights:"Все права защищены",privacy:"Политика обработки данных",
+email:"Электронная почта",messengers:"WhatsApp",rights:"Все права защищены",privacy:"Политика обработки данных",
 modalArchive:"Архив выступлений",modalRequest:"Запросить артиста",modalDates:"Даты и города",close:"Закрыть",
 searchPlaceholder:"Поиск артиста или города",searchEmpty:"Совпадений не найдено",seeDetails:"Подробнее",go:"Перейти к разделу",
 artistDesc:["Итальянский тенор с симфоническим оркестром","Рок-вокалист, известный по Rainbow и Deep Purple","Итальянский тенор и виртуозный гитарист"],
@@ -33,13 +33,13 @@ en:{
 navArtists:"Artists",navArchive:"Concert archive",navGallery:"Gallery",navAbout:"About",navContacts:"Contacts",
 heroKicker:"Featured artist",heroDesc:"Italian tenor. International stages, an extraordinary voice and symphonic orchestra performances.",
 genre:"Opera · Crossover",archive:"Tour archive",discover:"Explore projects",aboutArtist:"About the artist",
-stripe:"BEST SOUND ORIGINAL CONCERT PROJECTS",stripeEnd:"THE ART OF LIVE MUSIC",
+stripe:"BEST SOUND CONCERT PROJECTS",stripeEnd:"THE ART OF LIVE MUSIC",
 artistsTitle:"BEST SOUND artists",artistsInfo:"Performers featured in the agency's concert projects",archiveTitle:"Concert projects",archiveInfo:"Published events from previous years",
 galleryTitle:"Artist gallery",galleryInfo:"Photographs of BEST SOUND performers",feature:"CONCERT AGENCY",featureTitle:"Our concerts are works of art.",
 featureDesc:"Over 20 years of experience. Concerts with international stars, a wide touring geography and thousands of spectators — as described by BEST SOUND.",
 source:"Agency website",statYears:"years of experience",statEvents:"successful events",statAudience:"satisfied spectators",
 contactEyebrow:"GET IN TOUCH",contactTitle:"Let's create the next show",contactText:"Contact BEST SOUND for artist booking, concert production and partnerships.",
-email:"Email",messengers:"WhatsApp / Telegram",rights:"All rights reserved",privacy:"Privacy policy",
+email:"Email",messengers:"WhatsApp",rights:"All rights reserved",privacy:"Privacy policy",
 modalArchive:"Performance archive",modalRequest:"Request an artist",modalDates:"Dates and cities",close:"Close",
 searchPlaceholder:"Search artists or cities",searchEmpty:"No matching results",seeDetails:"View details",go:"Go to section",
 artistDesc:["Italian tenor with symphony orchestra","Rock vocalist known for Rainbow and Deep Purple","Italian tenor and virtuoso guitarist"],
@@ -49,13 +49,13 @@ it:{
 navArtists:"Artisti",navArchive:"Archivio concerti",navGallery:"Galleria",navAbout:"Agenzia",navContacts:"Contatti",
 heroKicker:"Artista in evidenza",heroDesc:"Tenore italiano. Palcoscenici internazionali, una voce straordinaria e concerti con orchestra sinfonica.",
 genre:"Opera · Crossover",archive:"Archivio tournée",discover:"Esplora i progetti",aboutArtist:"Scopri l'artista",
-stripe:"BEST SOUND ORIGINAL CONCERT PROJECTS",stripeEnd:"L'ARTE DELLA MUSICA DAL VIVO",
+stripe:"PROGETTI CONCERTISTICI BEST SOUND",stripeEnd:"L'ARTE DELLA MUSICA DAL VIVO",
 artistsTitle:"Artisti BEST SOUND",artistsInfo:"Musicisti dei progetti concertistici dell'agenzia",archiveTitle:"Progetti concertistici",archiveInfo:"Eventi pubblicati degli anni passati",
 galleryTitle:"Galleria degli artisti",galleryInfo:"Fotografie degli artisti BEST SOUND",feature:"AGENZIA DI CONCERTI",featureTitle:"I nostri concerti sono opere d'arte.",
 featureDesc:"Oltre 20 anni di esperienza. Concerti con star internazionali, tournée in numerosi Paesi e migliaia di spettatori: così BEST SOUND presenta la propria attività.",
 source:"Sito ufficiale dell'agenzia",statYears:"anni di esperienza",statEvents:"eventi di successo",statAudience:"spettatori soddisfatti",
 contactEyebrow:"CONTATTACI",contactTitle:"Creiamo insieme il prossimo concerto",contactText:"Contatta BEST SOUND per artist booking, produzione concerti e collaborazioni.",
-email:"Email",messengers:"WhatsApp / Telegram",rights:"Tutti i diritti riservati",privacy:"Informativa privacy",
+email:"Email",messengers:"WhatsApp",rights:"Tutti i diritti riservati",privacy:"Informativa privacy",
 modalArchive:"Archivio esibizioni",modalRequest:"Richiedi un artista",modalDates:"Date e città",close:"Chiudi",
 searchPlaceholder:"Cerca artisti o città",searchEmpty:"Nessun risultato",seeDetails:"Dettagli",go:"Vai alla sezione",
 artistDesc:["Tenore italiano con orchestra sinfonica","Cantante rock noto per Rainbow e Deep Purple","Tenore italiano e chitarrista virtuoso"],
@@ -105,7 +105,7 @@ root.innerHTML =
 '<button class="menu-button" type="button" id="menuToggle" aria-label="'+t.menu+'" aria-expanded="false">'+iconMenu+'</button></div>'+
 '<div class="search-panel" id="searchPanel"><input id="siteSearch" type="search" autocomplete="off" placeholder="'+t.searchPlaceholder+'" aria-label="'+t.search+'"><div class="search-list" id="searchResults"></div></div>'+
 '</div></header>'+
-'<section class="hero" id="home"><div class="hero-bg"><img src="'+photo.safina+'" alt="Alessandro Safina performing with an orchestra" fetchpriority="high"></div>'+
+'<section class="hero" id="home"><div class="hero-bg"><img src="'+photo.safina+'" alt="Alessandro Safina" fetchpriority="high"></div>'+
 '<div class="container hero-content"><div class="hero-copy"><div class="hero-eyebrow">'+t.heroKicker+'</div><h1><span>ALESSANDRO</span><span>SAFINA</span></h1>'+
 '<div class="hero-hint"><span>2026</span><i></i><span>'+t.genre+'</span><i></i><span>'+t.archive+'</span></div>'+
 '<p class="hero-description">'+t.heroDesc+'</p><div class="hero-actions">'+
@@ -116,7 +116,7 @@ root.innerHTML =
 '<section class="section" id="concerts">'+sectionHead(t.archiveTitle,t.archiveInfo,"tourScroller")+'<div class="scroller" id="tourScroller">'+tours.map(tourCard).join("")+'</div></section>'+
 '<section class="section" id="gallery">'+sectionHead(t.galleryTitle,t.galleryInfo,"galleryScroller")+
 '<div class="scroller" id="galleryScroller">'+[artists[0],artists[1],artists[2]].map(artistCard).join("")+'</div></section>'+
-'<section class="section" id="about"><div class="editorial"><div class="editorial-image"><img loading="lazy" decoding="async" src="'+photo.safina+'" alt="Alessandro Safina with a symphony orchestra"></div><div class="editorial-copy"><div class="eyebrow">'+t.feature+'</div><h2>'+t.featureTitle+'</h2><p>'+t.featureDesc+'</p><a class="text-link" href="https://sound-agency.ru/" target="_blank" rel="noopener noreferrer">'+t.source+' ↗</a></div></div>'+
+'<section class="section" id="about"><div class="editorial"><div class="editorial-image"><img loading="lazy" decoding="async" src="'+photo.safina+'" alt="Alessandro Safina"></div><div class="editorial-copy"><div class="eyebrow">'+t.feature+'</div><h2>'+t.featureTitle+'</h2><p>'+t.featureDesc+'</p><a class="text-link" href="https://sound-agency.ru/" target="_blank" rel="noopener noreferrer">'+t.source+' ↗</a></div></div>'+
 '<div class="metrics"><div class="metric"><strong>20+</strong><span>'+t.statYears+'</span></div><div class="metric"><strong>100+</strong><span>'+t.statEvents+'</span></div><div class="metric"><strong>1000+</strong><span>'+t.statAudience+'</span></div></div></section></main>'+
 '<section class="contacts" id="contacts"><div class="container contacts-inner"><div><div class="eyebrow">'+t.contactEyebrow+'</div><h2>'+t.contactTitle+'</h2><p>'+t.contactText+'</p><a class="btn btn-red" href="'+safeMail("BEST SOUND — Request")+'">'+t.modalRequest+' ↗</a></div><div class="contact-links">'+
 '<a class="contact-tile" href="mailto:BESTJU@YANDEX.RU"><small>'+t.email+'</small><strong>BESTJU@YANDEX.RU ↗</strong></a>'+
