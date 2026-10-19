@@ -93,6 +93,7 @@ function artistCard(a){return '<button class="artist-card" type="button" data-ar
 function tourCard(a){return '<button class="tour-card" type="button" data-tour="'+a.id+'" aria-label="'+t.seeDetails+': '+a.name+' '+a.year+'"><span class="tour-year">'+a.year+'</span><span class="tour-artist">'+a.region+'</span><span class="tour-name">'+a.name+'</span><span class="tour-city">'+a.dates.length+' '+t.cityCount+'</span><span class="tour-arrow" aria-hidden="true">↗</span></button>'}
 function sectionHead(title,subtitle,scrollId){return '<div class="section-head"><div><h2 class="section-title">'+title+'</h2><p class="section-intro">'+subtitle+'</p></div><div class="row-arrows"><button type="button" data-scroll="'+scrollId+'" data-dir="-1" aria-label="Previous">‹</button><button type="button" data-scroll="'+scrollId+'" data-dir="1" aria-label="Next">›</button></div></div>'}
 function safeMail(subject){return 'mailto:BESTJU@YANDEX.RU?subject='+encodeURIComponent(subject)}
+root.addEventListener("error",function(ev){if(ev.target&&ev.target.tagName==="IMG"){ev.target.style.visibility="hidden"}},true);
 root.innerHTML =
 '<a class="skip" href="#main">'+t.go+'</a>'+
 '<header class="nav" id="siteNav"><div class="container nav-inner">'+
