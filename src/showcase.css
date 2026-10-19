@@ -37,3 +37,27 @@
   .feature-stripe{flex-wrap:wrap;column-gap:8px;row-gap:3px}
   .feature-stripe .muted{flex-basis:100%;margin-left:48px}
 }
+
+/* Interactive states and reliable small-screen controls */
+.row-arrows button:disabled{opacity:.24;cursor:default}
+.row-arrows button:disabled:hover{background:#232429}
+.nav-links a:focus-visible,.lang a:focus-visible{border-radius:3px}
+.artist-card:focus-visible,.tour-card:focus-visible{outline-offset:-4px}
+@media(max-width:520px){
+  .hero{min-height:700px;min-height:88svh}
+  .hero-content{padding-top:182px;padding-bottom:130px}
+  .hero-eyebrow{font-size:10px}
+  .hero h1{font-size:clamp(40px,11.7vw,58px)}
+  .hero-hint{flex-wrap:wrap;row-gap:6px}
+  .hero-actions{gap:9px}
+  .hero-actions .btn{flex:1 1 auto;min-width:0;white-space:normal;text-align:center}
+  .main{margin-top:-78px}
+  .contacts{padding:42px 0}
+  .modal-content{padding:0 18px 20px}
+}
+@media(max-width:355px){
+  .hero h1{font-size:39px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-hint{font-size:10px}
+  .brand-copy{font-size:16px}
+}
