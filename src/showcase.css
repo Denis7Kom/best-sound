@@ -19,3 +19,21 @@
 @media(max-width:720px){.container{width:calc(100% - 36px)}.nav{height:66px}.nav-inner{gap:10px}.brand-mark{height:29px}.brand-copy{font-size:20px}.brand-copy small{font-size:7px;letter-spacing:2.3px}.nav-links{display:none;position:absolute;left:0;right:0;top:65px;padding:20px 18px 27px;background:#0e0f12;flex-direction:column;align-items:start;gap:18px;box-shadow:0 20px 40px #000b}.nav.open .nav-links{display:flex}.nav-links a{font-size:15px}.menu-button{display:grid}.nav-actions{gap:4px}.lang a{min-width:26px;padding:5px 2px;font-size:10px}.hero{min-height:690px;min-height:85svh;align-items:end}.hero-bg img{object-position:62% 28%}.hero::before{background:linear-gradient(0deg,#08090b 0%,rgba(8,9,11,.86) 33%,rgba(8,9,11,.1) 95%),linear-gradient(90deg,rgba(7,8,9,.5),transparent)}.hero-content{padding-top:165px;padding-bottom:125px}.hero h1{font-size:clamp(60px,13vw,85px);margin:15px 0 20px}.hero-description{font-size:14px;line-height:1.55}.hero-index{bottom:101px}.hero-index span{padding-right:22px}.main{margin-top:-80px}.artist-card{flex-basis:270px;height:185px}.card-title{font-size:24px}.editorial{grid-template-columns:1fr}.editorial-image{height:240px}.editorial-copy{padding:4px 24px 28px}.metrics{grid-template-columns:1fr 1fr}.metric{padding:18px 12px}.contacts{padding:45px 0;margin-top:48px}.contacts-inner{grid-template-columns:1fr}.search-panel{right:16px;top:62px}.footer .container{align-items:start}}
 @media(max-width:430px){.container{width:calc(100% - 28px)}.brand-copy{font-size:17px}.brand-copy small{letter-spacing:1.65px}.nav-actions{gap:1px}.hero h1{font-size:58px}.hero-hint{font-size:11px}.hero-actions .btn{padding:11px 13px;font-size:12px}.artist-card{flex-basis:240px;height:170px}.tour-card{flex-basis:240px}.contact-links{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.footer-meta{gap:9px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.scroller{scroll-behavior:auto}}
+
+/* Compact phone: preserve search, language controls and readable hero typography. */
+@media(max-width:520px){
+  .nav{height:98px}
+  .nav-inner{display:grid;grid-template-columns:minmax(0,1fr) 85px;grid-template-rows:49px 37px;column-gap:8px;row-gap:2px;align-items:center}
+  .brand{grid-column:1;grid-row:1;min-width:0}
+  .nav-actions{display:contents}
+  .icon-btn{grid-column:2;grid-row:1;justify-self:start}
+  .menu-button{grid-column:2;grid-row:1;justify-self:end}
+  .lang{grid-column:1/-1;grid-row:2;justify-self:start}
+  .nav-links{top:97px}
+  .search-panel{top:94px;right:12px}
+  .hero-content{padding-top:175px}
+  .hero h1{font-size:clamp(42px,12vw,61px);letter-spacing:-.08em;overflow-wrap:normal}
+  .hero-index{display:none}
+  .feature-stripe{flex-wrap:wrap;column-gap:8px;row-gap:3px}
+  .feature-stripe .muted{flex-basis:100%;margin-left:48px}
+}
