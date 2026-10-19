@@ -19,7 +19,7 @@ heroKicker:"Избранный артист",heroDesc:"Итальянский т
 genre:"Опера · Кроссовер",archive:"Архив гастролей",discover:"Смотреть проекты",aboutArtist:"Об артисте",
 stripe:"BEST SOUND ORIGINAL CONCERT PROJECTS",stripeEnd:"ИСКУССТВО ЖИВОГО ЗВУКА",
 artistsTitle:"Артисты BEST SOUND",artistsInfo:"Музыканты, представленные в проектах агентства",archiveTitle:"Концертные проекты",archiveInfo:"Подтверждённые события прошлых лет",
-galleryTitle:"Моменты на сцене",galleryInfo:"Артисты и концертные выступления",feature:"КОНЦЕРТНОЕ АГЕНТСТВО",featureTitle:"Наши концерты — произведение искусства.",
+galleryTitle:"Фотогалерея артистов",galleryInfo:"Фотографии исполнителей BEST SOUND",feature:"КОНЦЕРТНОЕ АГЕНТСТВО",featureTitle:"Наши концерты — произведение искусства.",
 featureDesc:"Более 20 лет опыта. Концерты с мировыми звёздами, широкая география и тысячи зрителей — именно так BEST SOUND описывает свою работу.",
 source:"Официальный сайт агентства",statYears:"лет опыта",statEvents:"успешных событий",statAudience:"довольных зрителей",
 contactEyebrow:"СВЯЗАТЬСЯ С НАМИ",contactTitle:"Создадим следующий концерт вместе",contactText:"Для организации выступления, сотрудничества и запросов артистов свяжитесь с командой BEST SOUND.",
@@ -35,7 +35,7 @@ heroKicker:"Featured artist",heroDesc:"Italian tenor. International stages, an e
 genre:"Opera · Crossover",archive:"Tour archive",discover:"Explore projects",aboutArtist:"About the artist",
 stripe:"BEST SOUND ORIGINAL CONCERT PROJECTS",stripeEnd:"THE ART OF LIVE MUSIC",
 artistsTitle:"BEST SOUND artists",artistsInfo:"Performers featured in the agency's concert projects",archiveTitle:"Concert projects",archiveInfo:"Published events from previous years",
-galleryTitle:"On-stage moments",galleryInfo:"Artists and live performances",feature:"CONCERT AGENCY",featureTitle:"Our concerts are works of art.",
+galleryTitle:"Artist gallery",galleryInfo:"Photographs of BEST SOUND performers",feature:"CONCERT AGENCY",featureTitle:"Our concerts are works of art.",
 featureDesc:"Over 20 years of experience. Concerts with international stars, a wide touring geography and thousands of spectators — as described by BEST SOUND.",
 source:"Agency website",statYears:"years of experience",statEvents:"successful events",statAudience:"satisfied spectators",
 contactEyebrow:"GET IN TOUCH",contactTitle:"Let's create the next show",contactText:"Contact BEST SOUND for artist booking, concert production and partnerships.",
@@ -51,7 +51,7 @@ heroKicker:"Artista in evidenza",heroDesc:"Tenore italiano. Palcoscenici interna
 genre:"Opera · Crossover",archive:"Archivio tournée",discover:"Esplora i progetti",aboutArtist:"Scopri l'artista",
 stripe:"BEST SOUND ORIGINAL CONCERT PROJECTS",stripeEnd:"L'ARTE DELLA MUSICA DAL VIVO",
 artistsTitle:"Artisti BEST SOUND",artistsInfo:"Musicisti dei progetti concertistici dell'agenzia",archiveTitle:"Progetti concertistici",archiveInfo:"Eventi pubblicati degli anni passati",
-galleryTitle:"Momenti sul palco",galleryInfo:"Artisti ed esibizioni dal vivo",feature:"AGENZIA DI CONCERTI",featureTitle:"I nostri concerti sono opere d'arte.",
+galleryTitle:"Galleria degli artisti",galleryInfo:"Fotografie degli artisti BEST SOUND",feature:"AGENZIA DI CONCERTI",featureTitle:"I nostri concerti sono opere d'arte.",
 featureDesc:"Oltre 20 anni di esperienza. Concerti con star internazionali, tournée in numerosi Paesi e migliaia di spettatori: così BEST SOUND presenta la propria attività.",
 source:"Sito ufficiale dell'agenzia",statYears:"anni di esperienza",statEvents:"eventi di successo",statAudience:"spettatori soddisfatti",
 contactEyebrow:"CONTATTACI",contactTitle:"Creiamo insieme il prossimo concerto",contactText:"Contatta BEST SOUND per artist booking, produzione concerti e collaborazioni.",
@@ -90,8 +90,9 @@ var iconPlay='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 
 function tagLabel(i){return i===0?t.genre:i===1?"ROCK · LIVE":"OPERA · ROCK"}
 function formatDate(iso){return new Intl.DateTimeFormat(locale,{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"}).format(new Date(iso+"T12:00:00Z"))}
 function artistCard(a){return '<button class="artist-card" type="button" data-artist="'+a.id+'" aria-label="'+t.seeDetails+': '+a.name+'"><img src="'+a.img+'" alt="'+a.name+'" loading="lazy" decoding="async"><span class="round-plus" aria-hidden="true">+</span><span class="card-content"><span class="card-overline">'+tagLabel(a.genre)+'</span><span class="card-title">'+a.name+'</span><span class="card-desc">'+a.description+'</span></span></button>'}
-function tourCard(a){return '<button class="tour-card" type="button" data-tour="'+a.id+'" aria-label="'+t.seeDetails+': '+a.name+' '+a.year+'"><span class="tour-year">'+a.year+'</span><span class="tour-artist">'+a.region+'</span><span class="tour-name">'+a.name+'</span><span class="tour-city">'+a.dates.length+' '+t.cityCount+'</span><span class="tour-arrow" aria-hidden="true">↗</span></button>'}
+function tourCard(a){return '<button class="tour-card" type="button" data-tour="'+a.id+'" aria-label="'+t.seeDetails+': '+a.name+' '+a.year+'"><span class="tour-year">'+a.year+'</span><span class="tour-artist">'+a.region+'</span><span class="tour-name">'+a.name+'</span><span class="tour-city">'+a.dates.length+' '+cityUnit(a.dates.length)+'</span><span class="tour-arrow" aria-hidden="true">↗</span></button>'}
 function sectionHead(title,subtitle,scrollId){return '<div class="section-head"><div><h2 class="section-title">'+title+'</h2><p class="section-intro">'+subtitle+'</p></div><div class="row-arrows"><button type="button" data-scroll="'+scrollId+'" data-dir="-1" aria-label="Previous">‹</button><button type="button" data-scroll="'+scrollId+'" data-dir="1" aria-label="Next">›</button></div></div>'}
+function cityUnit(n){if(lang!=="ru")return t.cityCount;var v=n%100,k=n%10;return v>=11&&v<=14?"городов":k===1?"город":k>=2&&k<=4?"города":"городов"}
 function safeMail(subject){return 'mailto:BESTJU@YANDEX.RU?subject='+encodeURIComponent(subject)}
 root.addEventListener("error",function(ev){if(ev.target&&ev.target.tagName==="IMG"){ev.target.style.visibility="hidden"}},true);
 root.innerHTML =
@@ -99,7 +100,7 @@ root.innerHTML =
 '<header class="nav" id="siteNav"><div class="container nav-inner">'+
 '<a class="brand" href="'+links[lang]+'" aria-label="BEST SOUND"><span class="brand-mark"></span><span class="brand-copy"><small>CONCERT AGENCY</small>BEST SOUND</span></a>'+
 '<nav class="nav-links" id="navLinks" aria-label="'+t.menu+'"><a href="#artists">'+t.navArtists+'</a><a href="#concerts">'+t.navArchive+'</a><a href="#gallery">'+t.navGallery+'</a><a href="#about">'+t.navAbout+'</a><a href="#contacts">'+t.navContacts+'</a></nav>'+
-'<div class="nav-actions"><button class="icon-btn" type="button" id="searchToggle" aria-label="'+t.search+'" aria-expanded="false">'+iconSearch+'</button>'+
+'<div class="nav-actions"><button class="icon-btn" type="button" id="searchToggle" aria-label="'+t.search+'" aria-controls="searchPanel" aria-expanded="false">'+iconSearch+'</button>'+
 '<div class="lang" aria-label="Language"><a href="'+links.ru+'" class="'+(lang==="ru"?"current":"")+'" lang="ru">RU</a><a href="'+links.en+'" class="'+(lang==="en"?"current":"")+'" lang="en">EN</a><a href="'+links.it+'" class="'+(lang==="it"?"current":"")+'" lang="it">IT</a></div>'+
 '<button class="menu-button" type="button" id="menuToggle" aria-label="'+t.menu+'" aria-expanded="false">'+iconMenu+'</button></div>'+
 '<div class="search-panel" id="searchPanel"><input id="siteSearch" type="search" autocomplete="off" placeholder="'+t.searchPlaceholder+'" aria-label="'+t.search+'"><div class="search-list" id="searchResults"></div></div>'+
@@ -128,23 +129,23 @@ function updateNav(){nav.classList.toggle("scrolled",window.scrollY>30)}
 window.addEventListener("scroll",updateNav,{passive:true});updateNav();
 menu.addEventListener("click",function(){var on=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(on))});
 document.querySelectorAll("#navLinks a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");menu.setAttribute("aria-expanded","false")})});
-searchToggle.addEventListener("click",function(){var on=searchPanel.classList.toggle("open");searchToggle.setAttribute("aria-expanded",String(on));if(on)search.focus()});
+searchToggle.addEventListener("click",function(){var on=searchPanel.classList.toggle("open");searchToggle.setAttribute("aria-expanded",String(on));if(on){nav.classList.remove("open");menu.setAttribute("aria-expanded","false");search.focus()}});
 function closeDialog(){dialog.close()}
 document.getElementById("modalClose").addEventListener("click",closeDialog);document.getElementById("modalDone").addEventListener("click",closeDialog);
 dialog.addEventListener("click",function(e){if(e.target===dialog)closeDialog()});
-function openDetail(kind,id){
+function openDetail(kind,id){searchPanel.classList.remove("open");searchToggle.setAttribute("aria-expanded","false");
 var obj,art;var meta=document.getElementById("modalMeta"),title=document.getElementById("modalTitle"),desc=document.getElementById("modalDesc"),dates=document.getElementById("modalDates"),image=document.getElementById("modalImage"),mail=document.getElementById("modalMail");
 if(kind==="tour"){
 obj=tours.find(function(x){return x.id===id});if(!obj)return;
 art=artists.find(function(x){return x.id===obj.artist});
 meta.textContent=t.modalArchive+" / "+obj.year+" / "+obj.region;
 title.textContent=obj.name;
-desc.textContent=obj.dates.length+" "+t.cityCount;
+desc.textContent=obj.dates.length+" "+cityUnit(obj.dates.length);
 dates.innerHTML='<div class="section-label">'+t.modalDates+'</div><ul class="modal-list">'+obj.dates.map(function(x){return "<li>"+formatDate(x.date)+" · "+city(x.city)+"</li>"}).join("")+"</ul>";
 }else{
 art=artists.find(function(x){return x.id===id});if(!art)return;
 meta.textContent=tagLabel(art.genre);title.textContent=art.name;desc.textContent=art.description;
-dates.innerHTML='<div class="section-label">'+t.modalArchive+'</div><ul class="modal-list">'+tours.filter(function(x){return x.artist===id}).map(function(x){return "<li>"+x.year+" · "+x.region+" · "+x.dates.length+" "+t.cityCount+"</li>"}).join("")+"</ul>";
+dates.innerHTML='<div class="section-label">'+t.modalArchive+'</div><ul class="modal-list">'+tours.filter(function(x){return x.artist===id}).map(function(x){return "<li>"+x.year+" · "+x.region+" · "+x.dates.length+" "+cityUnit(x.dates.length)+"</li>"}).join("")+"</ul>";
 }
 image.src=art.img;image.alt=art.name;mail.href=safeMail("BEST SOUND — "+art.name);dialog.showModal();
 }
@@ -154,9 +155,12 @@ function searchRender(){var q=norm(search.value.trim()),el=document.getElementBy
 var aa=artists.filter(function(x){return norm(x.name+" "+x.description).includes(q)});
 var tt=tours.filter(function(x){return norm(x.name+" "+x.year+" "+x.region+" "+x.dates.map(function(d){return d.city+" "+city(d.city)}).join(" ")).includes(q)}).slice(0,7);
 el.innerHTML=aa.map(function(x){return '<button type="button" data-artist="'+x.id+'">'+x.name+'<small>'+x.description+'</small></button>'}).join("")+
-tt.map(function(x){return '<button type="button" data-tour="'+x.id+'">'+x.name+" · "+x.year+'<small>'+x.dates.length+" "+t.cityCount+"</small></button>"}).join("")+(!aa.length&&!tt.length?'<p style="color:#bbb;padding:10px">'+t.searchEmpty+"</p>":"");
+tt.map(function(x){return '<button type="button" data-tour="'+x.id+'">'+x.name+" · "+x.year+'<small>'+x.dates.length+" "+cityUnit(x.dates.length)+"</small></button>"}).join("")+(!aa.length&&!tt.length?'<p style="color:#bbb;padding:10px">'+t.searchEmpty+"</p>":"");
 }
 search.addEventListener("input",searchRender);
-document.addEventListener("keydown",function(e){if(e.key==="Escape"&&searchPanel.classList.contains("open")){searchPanel.classList.remove("open");searchToggle.setAttribute("aria-expanded","false")}});
+document.addEventListener("click",function(e){if(!e.target.closest("#searchPanel,#searchToggle")&&searchPanel.classList.contains("open")){searchPanel.classList.remove("open");searchToggle.setAttribute("aria-expanded","false")}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){if(searchPanel.classList.contains("open")){searchPanel.classList.remove("open");searchToggle.setAttribute("aria-expanded","false")}if(nav.classList.contains("open")){nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}}});
+function updateRowControls(){document.querySelectorAll("[data-scroll]").forEach(function(b){var row=document.getElementById(b.dataset.scroll);b.disabled=!row||row.scrollWidth<=row.clientWidth+2})}
+window.addEventListener("resize",updateRowControls);requestAnimationFrame(updateRowControls);
 document.title="BEST SOUND — "+(lang==="ru"?"Концертное агентство":lang==="it"?"Agenzia di concerti":"Concert Agency");
 })();
