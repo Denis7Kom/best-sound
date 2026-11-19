@@ -75,8 +75,44 @@ def publish(release, channel):
         subprocess.run(command, check=True)
 
 
+
+def recover_interrupted_release(baseline, base_version, channel):
+    """Retry publishing a SemVer tag left behind by an interrupted release."""
+    versions = tuple(int(part) for part in base_version.split("."))
+    history = git("rev-list", "--first-parent", "HEAD").splitlines()
+    if baseline not in history:
+        raise ValueError("Release baseline must be in the first-parent history")
+    pattern = re.compile(r"v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)" + re.escape(channel))
+    candidates = []
+    for tag in git("tag", "--list", "v*").splitlines():
+        match = pattern.fullmatch(tag)
+        if not match:
+            continue
+        numbers = tuple(int(part) for part in match.groups())
+        commit = git("rev-parse", f"refs/tags/{tag}^{{commit}}")
+        if numbers > versions and commit in history[:history.index(baseline)]:
+            candidates.append((numbers, tag))
+    if not candidates:
+        return
+    tag = max(candidates)[1]
+    repo = os.environ["GITHUB_REPOSITORY"]
+    result = subprocess.run(
+        ["gh", "api", f"repos/{repo}/releases/tags/{tag}"],
+        text=True, capture_output=True,
+    )
+    if result.returncode == 0:
+        return
+    if "HTTP 404" not in result.stderr:
+        raise RuntimeError(f"Failed to inspect release {tag}: {result.stderr.strip()}")
+    command = ["gh", "release", "create", tag, "--verify-tag", "--title", tag, "--generate-notes"]
+    if channel:
+        command.append("--prerelease")
+    subprocess.run(command, check=True)
+
 if __name__ == "__main__":
     channel = os.environ.get("RELEASE_CHANNEL", "")
+    if not sys.argv[1:]:
+        recover_interrupted_release(os.environ["RELEASE_BASELINE"], os.environ["RELEASE_BASE_VERSION"], channel)
     release = plan(os.environ["RELEASE_BASELINE"], os.environ["RELEASE_BASE_VERSION"], channel)
     if sys.argv[1:] == ["--plan"]:
         print(json.dumps(release))
