@@ -1,0 +1,74 @@
+name: GitHub Releases
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  RELEASE_BASELINE: '9944bb5eedb317f623f8d89ab5543b8062aae135'
+  RELEASE_BASE_VERSION: '1.0.0'
+  RELEASE_CHANNEL: '-alpha'
+  RELEASE_PROFILE_DOCS: 'false'
+
+jobs:
+  release-smoke:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source files
+        shell: bash
+        run: |
+          test -s index.html && test -s lang-en.html && test -s lang-it.html && test -s privacy.html
+          node --check src/showcase.js
+      - name: Verify version selection and repeat runs
+        shell: bash
+        run: |
+          script="$GITHUB_WORKSPACE/.github/scripts/release.py"
+          sample=$(mktemp -d)
+          cd "$sample"
+          git init --quiet -b main
+          git config user.name 'Release test'
+          git config user.email 'release-test@example.invalid'
+          git commit --allow-empty -qm 'Initial state'
+          export RELEASE_BASELINE
+          RELEASE_BASELINE=$(git rev-parse HEAD)
+          RELEASE_BASE_VERSION=1.2.3
+          git commit --allow-empty -qm 'ci: configure release'
+          test "$(python3 "$script" --plan)" = null
+          git commit --allow-empty -qm 'fix(ui): repair mobile layout'
+          python3 "$script" --plan | python3 -c 'import json, os, sys; p=json.load(sys.stdin); assert p["tag"] == "v1.2.4" + os.environ["RELEASE_CHANNEL"]; assert "fix(ui): repair mobile layout" in p["notes"]'
+          git commit --allow-empty -qm 'feat: add a feature'
+          python3 "$script" --plan | python3 -c 'import json, os, sys; assert json.load(sys.stdin)["tag"] == "v1.3.0" + os.environ["RELEASE_CHANNEL"]'
+          git commit --allow-empty -qm 'feat!: replace old behavior'
+          python3 "$script" --plan | python3 -c 'import json, os, sys; assert json.load(sys.stdin)["tag"] == "v2.0.0" + os.environ["RELEASE_CHANNEL"]'
+          git tag "v2.0.0$RELEASE_CHANNEL"
+          test "$(python3 "$script" --plan)" = null
+
+  release:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: github-releases-main
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify source files
+        shell: bash
+        run: |
+          test -s index.html && test -s lang-en.html && test -s lang-it.html && test -s privacy.html
+          node --check src/showcase.js
+      - name: Publish a classified release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/release.py
